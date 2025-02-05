@@ -1,0 +1,29 @@
+{
+  "eventos": [
+    {
+      "id": 1,
+      "titulo": "Evento 1",
+      "descricaoCurta": "Descrição curta do Evento 1",
+      "descricaoCompleta": "Descrição completa do Evento 1",
+      "status": "ativo",
+      "dataPublicacao": "2023-10-01T12:00:00Z",
+      "imagem": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 2,
+      "titulo": "Evento 2",
+      "descricaoCurta": "Descrição curta do Evento 2",
+      "descricaoCompleta": "Descrição completa do Evento 2",
+      "status": "inativo",
+      "dataPublicacao": "2023-10-02T12:00:00Z",
+      "imagem": "https://via.placeholder.com/150"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123"
+    }
+  ]
+}
