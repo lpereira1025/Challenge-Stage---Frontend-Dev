@@ -144,13 +144,13 @@ cd desafio-frontend-angular</code></pre>
   <img src="https://github.com/lpereira1025/Challenge-Stage---Frontend-Dev/blob/main/src/assets/images/login.PNG" alt="Tela de Login" class="screenshot">
 
   <h3>Listagem de Eventos (Cards)</h3>
-  <img src="[screenshots/cards-view.png](https://github.com/lpereira1025/Challenge-Stage---Frontend-Dev/blob/main/src/assets/images/Eventos.PNG)" alt="Listagem em Cards" class="screenshot">
+  <img src="https://github.com/lpereira1025/Challenge-Stage---Frontend-Dev/blob/main/src/assets/images/Eventos.PNG" alt="Listagem em Cards" class="screenshot">
 
   <h3>Listagem de Eventos (Lista)</h3>
-  <img src="[screenshots/list-view.png](https://github.com/lpereira1025/Challenge-Stage---Frontend-Dev/blob/main/src/assets/images/Lista.PNG)" alt="Listagem em Lista" class="screenshot">
+  <img src="https://github.com/lpereira1025/Challenge-Stage---Frontend-Dev/blob/main/src/assets/images/Lista.PNG" alt="Listagem em Lista" class="screenshot">
 
   <h3>Modal de Detalhes do Evento</h3>
-  <img src="[screenshots/modal.png](https://github.com/lpereira1025/Challenge-Stage---Frontend-Dev/blob/main/src/assets/images/Modal.PNG)" alt="Modal de Detalhes" class="screenshot">
+  <img src="https://github.com/lpereira1025/Challenge-Stage---Frontend-Dev/blob/main/src/assets/images/Modal.PNG" alt="Modal de Detalhes" class="screenshot">
 
   <h2>Testes de Responsividade</h2>
   <p>
