@@ -1,0 +1,73 @@
+<div class="user-container">
+  <header class="header">
+    <div class="user-info">
+      <span>Bem-vindo, {{ username }}</span>
+    </div>
+    <button class="logout-button" (click)="logout()">Logout</button>
+  </header>
+
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Pesquisar eventos..."
+      [(ngModel)]="searchQuery"
+      (input)="filterEvents()"
+    />
+  </div>
+
+  <!-- Cards View -->
+  <div class="events-grid" *ngIf="viewMode === 'cards'">
+    <div *ngFor="let event of filteredEvents" class="event-card" (click)="openModal(event)">
+      <img [src]="event.image" alt="{{ event.title }}" class="event-image" />
+      <div class="event-details">
+        <span class="event-status" [ngClass]="{'active': event.status === 'active', 'inactive': event.status === 'inactive'}">
+          {{ event.status }}
+        </span>
+        <h3 class="event-title">{{ event.title }}</h3>
+        <span>Publicado em</span>
+        <p class="event-publish-date">{{ event.publishDate | date: 'dd/MM/yyyy' }}</p>
+        <button class="delete-button" (click)="deleteEvent(event.id, $event)">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- List View -->
+  <div class="events-list" *ngIf="viewMode === 'list'">
+    <div *ngFor="let event of filteredEvents" class="event-list-item" (click)="openModal(event)">
+      <img [src]="event.image" alt="{{ event.title }}" class="event-list-image" />
+      <div class="event-list-details">
+        <h3 class="event-list-title">{{ event.title }}</h3>
+        <p class="event-list-publish-date">{{ event.publishDate | date: 'dd/MM/yyyy' }}</p>
+        <span class="event-list-status" [ngClass]="{'active': event.status === 'active', 'inactive': event.status === 'inactive'}">
+          {{ event.status }}
+        </span>
+        <button class="delete-button" (click)="deleteEvent(event.id, $event)">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" *ngIf="selectedEvent">
+    <div class="modal-content">
+      <span class="close-button" (click)="closeModal()">&times;</span>
+      <img [src]="selectedEvent.image" alt="{{ selectedEvent.title }}" class="modal-image" />
+      <h2 class="modal-title">{{ selectedEvent.title }}</h2>
+      <p class="modal-description">{{ selectedEvent.fullDescription }}</p>
+      <button class="delete-button" (click)="deleteEvent(selectedEvent.id)">Excluir Evento</button>
+    </div>
+  </div>
+
+  <div class="buttonChange">
+    <span class="customLine" [class.hidden]="viewMode !== 'cards'">
+      <button class="line" [class.hidden]="viewMode !== 'cards'"></button>
+      <button class="line" [class.hidden]="viewMode !== 'cards'"></button>
+      <button class="line" [class.hidden]="viewMode !== 'cards'"></button>
+    </span>
+    <span class="material-symbols-outlined" [class.hidden]="viewMode === 'cards'">
+      dataset
+    </span>
+    <button class="buttonToggle" (click)="toggleViewMode()">
+      {{ viewMode === 'cards' ? 'Ver tabela em lista' : 'Ver tabela em cards' }}
+    </button>
+  </div>
+</div>

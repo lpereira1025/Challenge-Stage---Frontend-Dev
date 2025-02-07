@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Bem-vindo ao Sistema de Eventos</mat-card-title>
+      <mat-card-subtitle>Faça login para continuar</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()" class="login-form">
+        <mat-form-field appearance="outline">
+          <mat-label>Usuário</mat-label>
+          <input matInput [(ngModel)]="username" name="username" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+          <input matInput [(ngModel)]="password" name="password" type="password" required>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Entrar</button>
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <a href="#" class="forgot-password">Esqueci minha senha</a>
+    </mat-card-actions>
+  </mat-card>
+</div>

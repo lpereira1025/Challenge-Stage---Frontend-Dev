@@ -1,0 +1,28 @@
+.eventos-container {
+  padding: 20px;
+}
+
+.view-buttons {
+  margin-bottom: 20px;
+}
+
+.cards-view {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.evento-card {
+  width: 300px;
+}
+
+.table-view {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-view th, .table-view td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}

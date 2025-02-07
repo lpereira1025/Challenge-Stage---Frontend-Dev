@@ -1,1 +1,44 @@
-<p>list-events works!</p>
+<div class="eventos-container">
+  <div class="view-buttons">
+    <button mat-raised-button (click)="toggleView('cards')" [color]="viewMode === 'cards' ? 'primary' : ''">
+      <mat-icon>view_module</mat-icon> Cards
+    </button>
+    <button mat-raised-button (click)="toggleView('table')" [color]="viewMode === 'table' ? 'primary' : ''">
+      <mat-icon>view_list</mat-icon> Tabela
+    </button>
+  </div>
+
+  <div *ngIf="viewMode === 'cards'" class="cards-view">
+    <mat-card *ngFor="let event of events" class="event-card">
+      <img mat-card-image [src]="event.image" alt="{{ event.title }}">
+      <mat-card-content>
+        <h3>{{ event.title }}</h3>
+        <p>{{ event.shortDescription }}</p>
+        <p><strong>Status:</strong> {{ event.status }}</p>
+        <p><strong>Publicação:</strong> {{ event.publishDate | date }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="warn" (click)="deleteEvent(event.id)">Deletar</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <table *ngIf="viewMode === 'table'" class="table-view">
+    <tr>
+      <th>Título</th>
+      <th>Descrição Curta</th>
+      <th>Status</th>
+      <th>Data de Publicação</th>
+      <th>Ações</th>
+    </tr>
+    <tr *ngFor="let event of events">
+      <td>{{ event.title }}</td>
+      <td>{{ event.shortDescription }}</td>
+      <td>{{ event.status }}</td>
+      <td>{{ event.publishDate | date }}</td>
+      <td>
+        <button mat-button color="warn" (click)="deleteEvent(event.id)">Deletar</button>
+      </td>
+    </tr>
+  </table>
+</div>

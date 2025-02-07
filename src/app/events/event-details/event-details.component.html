@@ -1,1 +1,7 @@
-<p>detalhes-evento works!</p>
+<div *ngIf="event">
+  <h2>{{ event.title }}</h2>
+  <img [src]="event.image" alt="{{ event.title }}">
+  <p>{{ event.fullDescription }}</p>
+  <p>{{ event.status }}</p>
+  <p>{{ event.publishDate | date }}</p>
+</div>
